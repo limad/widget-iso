@@ -46,7 +46,7 @@ Les fichiers doivent se trouver **directement** dans ce dossier (pas dans un sou
 
 1. Téléchargez [`widget_iso.zip`](https://github.com/limad/widget-iso/raw/beta/widget_iso.zip) sur votre ordinateur.
 2. Dans Jeedom, ouvrez **Réglages → Système → Éditeur de fichiers**.
-3. Allez dans `data` → `customTemplates` → `dashboard` (créez les dossiers `customTemplates` et `dashboard` s'ils n'existent pas).
+3. Allez dans `data` → `customTemplates` → `dashboard`.
 4. Cliquez sur l'icône **Envoyer les fichiers** (flèche vers le haut) et envoyez `widget_iso.zip`.
 5. Clic droit sur `widget_iso.zip` → **Extraire les fichiers de l'archive**. Extrayez dans le dossier courant, pas « Dans un nouveau dossier ».
 6. Vérifiez que les fichiers `cmd.….iso_….html` et le dossier `iso_src` sont bien à la racine de `dashboard`, puis supprimez `widget_iso.zip`. Si un sous-dossier a été créé, déplacez son contenu dans `dashboard`.
@@ -60,7 +60,6 @@ Résultat attendu :
 ```bash
 cd /tmp
 wget -O widget_iso.zip https://github.com/limad/widget-iso/raw/beta/widget_iso.zip
-sudo mkdir -p /var/www/html/data/customTemplates/dashboard
 sudo unzip -o widget_iso.zip -d /var/www/html/data/customTemplates/dashboard
 sudo chown -R www-data:www-data /var/www/html/data/customTemplates
 rm widget_iso.zip
