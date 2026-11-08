@@ -8,6 +8,12 @@ Les widgets « iso » remplacent l'affichage par défaut des commandes sur le da
 
 ![Station Netatmo : tuiles et lignes iso](screenshots/dashboard_netatmo.png)
 
+La grille s'adapte à la largeur de l'équipement. Le même équipement, en étroit puis en large :
+
+![Compteur gaz, tuile étroite](screenshots/dashboard_gaz_etroit.png)
+
+![Compteur gaz, tuile large](screenshots/dashboard_gaz_large.png)
+
 ## Contenu du pack
 
 Le pack est distribué dans l'archive [`widget_iso.zip`](widget_iso.zip). Elle contient :
