@@ -2,13 +2,13 @@
 
 Pack de widgets dashboard pour **Jeedom** (4.4 et plus), par Limad44.
 
-Les widgets « iso » remplacent l'affichage par défaut des commandes sur le dashboard par un rendu homogène et compact : lignes alignées, tuiles, listes, curseurs, sélecteurs, zones de message, caméras. Toutes les commandes d'un équipement s'organisent en grille et s'adaptent au thème clair ou sombre de Jeedom.
+Les widgets « iso » remplacent l'affichage par défaut des commandes sur le dashboard par un rendu homogène et compact : lignes alignées, tuiles, listes, curseurs, sélecteurs, zones de message, caméras. Les commandes d'un équipement s'alignent ligne par ligne, sur les mêmes bords, et s'adaptent au thème clair ou sombre de Jeedom.
 
 ![Équipement Alexa avec les widgets iso](screenshots/dashboard_alexa.png)
 
 ![Station Netatmo : tuiles et lignes iso](screenshots/dashboard_netatmo.png)
 
-La grille s'adapte à la largeur de l'équipement. Le même équipement, en étroit puis en large :
+La disposition s'adapte à la largeur de l'équipement. Le même équipement, en étroit puis en large :
 
 ![Compteur gaz, tuile étroite](screenshots/dashboard_gaz_etroit.png)
 
@@ -93,13 +93,15 @@ Les widgets en ligne (`iso_line`, `iso_btn`, `iso_slider`, `iso_select`, etc.) o
 
 Ne modifiez pas les fichiers du pack : ils sont remplacés à chaque mise à jour.
 
-Placez vos règles CSS dans `iso_src/custom.iso.css`. Ce fichier est chargé après la feuille principale et ses règles l'emportent. Le guide `iso_src/custom_iso_css_doc.md` (inclus dans l'archive) décrit les variables disponibles : largeur des colonnes, couleurs, arrondis, tailles de texte.
+Placez vos règles CSS dans `iso_src/custom.iso.css`. Ce fichier est chargé après la feuille principale et ses règles l'emportent. Le guide `iso_src/custom_iso_css_doc.md` (inclus dans l'archive) décrit la disposition et les variables disponibles : largeur des widgets, marges, couleurs, arrondis, tailles de texte.
 
-Exemple, deux colonnes fixes pour tous les équipements :
+Exemple, des widgets plus larges sur grand écran (une ligne fait 410 px au lieu de 328 px) :
 
 ```css
-.eqLogic-widget.hasIsocmds .cmds-iso {
-    grid-template-columns: repeat(2, 1fr) !important;
+@media (min-width: 1025px) {
+    .cmd-widget.widget-iso {
+        --nbStep: 5;
+    }
 }
 ```
 
